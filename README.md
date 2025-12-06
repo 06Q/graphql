@@ -1,1 +1,1 @@
-# qzuhair.github.io-graphql
+# graphql
