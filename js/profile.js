@@ -1,6 +1,6 @@
 function logout(){
     localStorage.clear();
-    window.location.href = '/html/login.html';
+    window.location.href = '/index.html';
 }
 const JWT = localStorage.getItem('JWT');
 
