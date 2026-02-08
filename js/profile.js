@@ -70,12 +70,12 @@ async function fetchBasicInfo() {
 async function fetchUserData() {
     if (username === ''){
         console.error("Username does not exists");
-        window.location.href = "/html/login.html"
+        window.location.href = "/index.html"
         return;
     }
     if (userID === undefined || userID === null || isNaN(userID)){
         console.error("User ID is empty");
-        window.location.href = "/html/login.html"
+        window.location.href = "/index.html"
         return;
     }
 
