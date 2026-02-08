@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #2b3b4d 0%, #243544 100%);
+  color: #ECF0F1;
+  min-height: 100vh;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+  z-index: 10;
+}
+
+#logout {
+  color: #fff;
+  background-color: #2980B9;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#logout:hover {
+  filter: brightness(0.9);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+}
+
+/* ===== User Info ===== */
+.user-info {
+  grid-column: 1 / -1;
+  background: rgba(66, 86, 108, 0.95);
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.user-infoDe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  width: 70%;
+}
+
+.user-infoDe p {
+  font-size: 0.9rem;
+  color: #e0e7f0;
+}
+
+.user-infoDe span {
+  font-weight: 700;
+}
+
+/* ===== Card style ===== */
+.card {
+  background: rgba(66, 86, 108, 0.95);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ===== Audit List ===== */
+#audits h1 {
+  margin-bottom: 10px;
+}
+
+#audit-list {
+  display: grid;          /* Use CSS Grid to display items */
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 20px;              /* Space between audits */
+}
+
+.audit-info {
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 520px;
+}
+
+.audit-info .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-info .closureType {
+  font-weight: 700;
+  color: #0b6bff;
+}
+
+.audit-info .project {
+  font-weight: 700;
+  color: #28a745;
+}
+
+.audit-info .captain {
+  color: #888;
+  font-style: italic;
+}
+
+/* Pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#pagination button {
+  padding: 8px 14px;
+  background: #2980B9;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#pagination button:disabled {
+  background: #5a6b7b;
+  cursor: not-allowed;
+}
+
+/* ===== Grid layout sizes ===== */
+#projectPassnFailRatio {
+  grid-column: 1 / 2;
+  max-width: 520px;
+}
+
+#audits {
+  grid-column: 2 / 3;
+  width: 820px;
+  max-height: 520px;
+}
+
+#xpByProjectGraph {
+  grid-column: 1 / -1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .user-infoDe {
+    grid-template-columns: 1fr;
+  }
+
+  #projectPassnFailRatio,
+  #audits {
+    grid-column: 1 / -1;
+  }
+
+  #audit-list {
+    grid-template-columns: 1fr; /* Stack audits vertically on smaller screens */
+  }
+}

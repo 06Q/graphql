@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Graphql</title>
+</head>
+<body>
+     <div id="header">
+        
+
+        <button id="logout" onclick="logout()">
+            <div>Logout!</div>
+        </button>
+    </div>
+    <div class="container">
+
+   
+
+    
+        <div class="user-info">
+            <div class="user-left">
+            <h2 id="username"></h2>
+            <svg id="user-img">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.8 3.6c.4 0 .8-.3.8-.8 0-.4-.4-.8-.8-.8-.5 0-.9.4-.9.8 0 .5.4.8.9.8Zm0 1h.7L8.9 6h-6v1.8H1v6.7h1.9v1.5h4.9v1.8H1V23h22v-5h-6.8v-2h5v-1.4H23V8h-1.9V6.1H15l1.4-1.5h.5c1 0 1.9-.8 1.9-1.8S17.9 1 16.8 1c-1 0-1.8.8-1.8 1.8 0 .5.1.9.4 1.2l-1.9 2h-3.2L8.3 4A1.8 1.8 0 0 0 6.8 1c-1 0-1.9.8-1.9 1.8s.8 1.9 1.9 1.9ZM20 7.2H4v8H20V7ZM7.8 19H22v3H2v-3h5.8Zm7.4-1v-1.6H8.8v1.6h6.4ZM2.6 9H2v4.7h.6V9Zm18.8 0h.6v4.7h-.6V9ZM8 11.4c.7 0 1.2-.6 1.2-1.2 0-.7-.5-1.3-1.2-1.3s-1.2.6-1.2 1.3c0 .6.5 1.2 1.2 1.2Zm0 1c1.2 0 2.3-1 2.3-2.2 0-1.3-1-2.3-2.3-2.3-1.3 0-2.3 1-2.3 2.3 0 1.2 1 2.2 2.3 2.2Zm9.4-2.2c0 .6-.5 1.2-1.3 1.2s-1.3-.6-1.3-1.2c0-.7.5-1.3 1.3-1.3s1.3.6 1.3 1.3Zm1 0c0 1.2-1 2.2-2.3 2.2-1.3 0-2.4-1-2.4-2.2 0-1.3 1.1-2.3 2.4-2.3 1.3 0 2.4 1 2.4 2.3Zm-7.9 3-.2-.6-1 .4.5 1.1h4.5l.4-1.1-1-.3-.2.4h-3Zm7.2-10.4c0 .5-.4.8-.9.8a.8.8 0 0 1-.8-.8c0-.4.4-.8.8-.8.5 0 .9.4.9.8Z" fill="var(--purple)"></path>
+            </svg>
+            
+            </div>
+            <div class="user-infoDe">
+            <p>Name: <span id="user-name"></span></p>
+            <p>Gender: <span id="user-gender"></span></p>
+            <p>Email: <span id="user-email"></span></p>
+            <p>Total Xp: <span id="totalXp"></span></p>
+            <p>Audit Ratio: <span id="totalRatio"></span></p>
+            </div>
+        </div>
+    
+    
+
+    
+    
+    <div id="projectPassnFailRatio" class="card">
+        <h1>Project Pass And Fail Ratio</h1>
+        <br/>
+        <br/>
+        <br/>
+        <svg id="passfail" width="400" height="400"></svg>
+    </div>
+    <!-- <div id="auditRatio">
+        <h1>Audit Ratio</h1>
+        <br/>
+        <p ><span id="ratioUp"></span></p>
+        <p > <span id="ratioDown"></span></p>
+        <br/>
+        <h3 > <span id="totalRatio"></span></h3>
+    </div> -->
+
+    <div id="audits" class="card">
+        <h1>Audits</h1>
+        <div id="audit-list"></div>
+        <div id="pagination">
+            <button id ="prevPage" onclick="changePage(-1)">Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id ="nextPage" onclick="changePage(1)">Next</button>
+        </div>
+    </div>
+    <div id="xpByProjectGraph" class="card">
+        <h1>Xp Earned By Project</h1>
+        <br/>
+        <div id="barChart"></div>
+    </div>
+    </div>
+    <script src="/js/profile.js" defer></script>
+</body>
+</html>

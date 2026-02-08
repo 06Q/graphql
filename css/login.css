@@ -1,0 +1,196 @@
+
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #2C3E50; /* Main background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100%; */
+  color: #ECF0F1;
+}
+
+/* Container for everything */
+.container {
+  text-align: center;
+}
+
+/* Header text */
+#header {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-container {
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+  width: 100%;
+  max-width: 400px; /* Maximum width for large screens */
+}
+
+/* Input fields */
+#login-form input {
+  font-size: 1.3rem;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border: 1px solid #95A5A6;
+  border-radius: 6px;
+  color: #ECF0F1;
+  background-color: #34495E;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on input fields */
+#login-form input:hover {
+  border-color: #2980B9;
+}
+
+/* Button */
+#login-button {
+  font-size: 1.5rem;
+  padding: 20px;
+  width: 100%;
+  background-color: #2980B9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+  filter: brightness(0.85);
+  transform: scale(1.05); 
+}
+
+#error-message{
+  color: #e74c3c;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+@media (max-width: 480px) {
+  /* Make header bigger */
+  #header {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Increase form size and make more visible */
+  .login-container {
+    padding: 3.5rem 2.5rem;
+    background-color: rgba(68, 92, 117, 1); /* Lighter background */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Make input fields shorter */
+  #login-form input {
+    font-size: 1.4rem;
+    padding: 20px;
+    width: 100%;  /* Shorter input fields on mobile */
+    margin: 0 auto 1.5rem auto; /* Center the fields */
+  }
+
+  /* Larger button on mobile */
+  #login-button {
+    font-size: 1.5rem;
+    padding: 20px;
+    width: 90%; /* Button full width */
+  }
+}
+
+/* Small tablets & larger phones */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Make header bigger */
+  #header {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Increase form size and make more visible */
+  .login-container {
+    padding: 3.5rem 2.5rem;
+    background-color: rgba(68, 92, 117, 1); /* Lighter background */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Make input fields slightly shorter for tablets */
+  #login-form input {
+    font-size: 1.3rem;
+    padding: 18px;
+    width: 100%;  /* Shorter input fields on tablets */
+    margin: 0 auto 1.5rem auto; /* Center the fields */
+  }
+
+  /* Larger button on tablets */
+  #login-button {
+    font-size: 1.4rem;
+    padding: 18px;
+    width: 80%; /* Button full width */
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 769px) {
+  /* Make header bigger */
+  #header {
+    font-size: 3rem; /* Larger header */
+  }
+
+  /* Increase form size */
+  .login-container {
+    padding: 3.5rem 3rem;
+    width: 100%;
+    max-width: 700px; /* Form width for desktops */
+    background-color: rgba(68, 92, 117, 1); /* Lighter background */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Longer input fields on desktop */
+  #login-form input {
+    font-size: 1.4rem;
+    padding: 20px;
+    width: 100%;  /* Longer input fields on desktop */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Larger button on desktop */
+  #login-button {
+    font-size: 1.5rem;
+    padding: 20px;
+    width: 60%; /* Button full width */
+  }
+}
+
+#error-message {
+    color: white;
+    background-color: #e74c3c;  
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: none;  
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

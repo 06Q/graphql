@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #222831; /* Dark background for the body */
+  color: #E3E3E3; /* Light gray text for contrast */
+  min-height: 100vh;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+  z-index: 10;
+}
+
+#logout {
+  color: #fff;
+  background-color: #4E5D6C; /* Teal color for the logout button */
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#logout:hover {
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+  padding: 0 15px;
+}
+
+/* ===== User Info ===== */
+.user-info {
+  grid-column: 1 / -1;
+  background: #393E46; /* Dark gray background for the user info */
+  border-radius: 10px;
+  padding: 20px 25px;
+  height: 130px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.user-infoDe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  width: 70%;
+}
+
+.user-infoDe p {
+  font-size: 0.9rem;
+  color: #E3E3E3; /* Light gray for the user info text */
+}
+
+.user-infoDe span {
+  font-weight: 700;
+}
+
+#user-img {
+  width: 40px;
+  height: 40px;
+  margin-top: 25px;
+}
+
+/* ===== Card style ===== */
+.card {
+  background: #393E46; /* Dark gray for the card background */
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Audit List ===== */
+#audits h1 {
+  margin-bottom: 10px;
+  color: #E3E3E3; /* Light gray for headings */
+}
+
+#audit-list {
+  display: grid; /* Use CSS Grid to display items */
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 20px;
+  overflow-y: auto;
+  max-height: 400px; /* Set max height to make the list scrollable */
+}
+
+.audit-info {
+  background: #45494f; /* Teal color for audit items */
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audit-info .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-info .closureType {
+  font-weight: 700;
+  color: #E3E3E3; /* Dark background color for closure type text */
+}
+
+.audit-info .project {
+  font-weight: 700;
+  color: #E3E3E3; /* Dark text color for project names */
+}
+
+.audit-info .captain {
+  color: #b8b5b5;  /* Dark color for captain's name */
+  font-style: italic;
+}
+
+/* Pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#pagination button {
+  padding: 8px 14px;
+  background: #4E5D6C; /* Teal color for pagination buttons */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#pagination button:hover {
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+
+#pagination button:disabled {
+  background: #5a6b7b;
+  cursor: not-allowed;
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+/* ===== Grid layout sizes ===== */
+#projectPassnFailRatio {
+  grid-column: 1 / 2;
+  max-width: 520px;
+  margin-right: 0;
+  height:520px;
+  justify-content: center;
+}
+
+#audits {
+  grid-column: 2 / 3;
+  width: 820px;
+  max-height: 520px;
+  margin-left: 0;
+}
+
+#xpByProjectGraph {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .user-infoDe {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  #projectPassnFailRatio,
+  #audits,
+  #xpByProjectGraph {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #audit-list {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .user-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  #user-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .audit-info {
+    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  #logout {
+    font-size: 0.8rem;
+  }
+
+  #pagination button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Charts ===== */
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.user-info > * {
+  min-width: 0;
+}
+
+.user-infoDe p {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1100px) {
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 200px;
+  }
+
+  .user-infoDe {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

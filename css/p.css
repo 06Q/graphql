@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #2C3E50; 
+  color: #ECF0F1;
+  margin: 0;
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;   /* 👈 key change */
+  align-items: center;      /* optional: center horizontally */
+  gap: 40px;                /* space between each div */
+  margin-top: 150px;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;              
+  left: 0;                   
+  width: 100%;              
+  border: none !important; 
+  box-shadow: none !important;
+  outline: none !important;
+  color: #ECF0F1;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 2rem;
+  z-index: 1000;        
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #1a252f, transparent);
+}
+
+#logout {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  color: white;
+  background-color: #2980B9;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+#logout:hover{
+  filter: brightness(0.85);
+  transform: scale(1.1); 
+}
+
+.user-info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  height: 20%;
+  background-color: rgba(68, 92, 117, 1);
+  color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+}
+
+
+.user-infoDe{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 1rem 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .user-infoDe{
+    grid-template-columns: repeat(2, 1fr); /* fall back to 2 columns */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .user-infoDe{
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+
+
+.user-left {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;   /* 👈 vertical centering */
+  gap: 0.75rem;
+}
+
+/* Make SVG behave like text */
+.user-left svg {
+  width: 36px;
+  height: 36px;
+  fill: white;
+  display: block;
+  transform: translateY(9px); /* 👈 THIS is the key */
+}
+
+/* Username */
+#username {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1;        /* 👈 important for perfect centering */
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.user-info p {
+  margin-bottom: 0.8rem;
+}
+
+
+#graph{
+    background-color: rgba(68, 92, 117, 1);
+}
+
+#projectPassnFailRatio{
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+  /* max-width: 400px;  */
+  
+}
+
+#xpByProjectGraph{
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+}
+
+#auditRatio{
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+}
+
+text{
+  fill: white;
+} 
+
+#audits{
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+}
+
+#audits {
+  background-color: rgba(68, 92, 117, 1);
+  padding: 3.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#audit-list {
+  display: flex;
+  flex-direction: column; /* Stack audits vertically */
+  gap: 1.5rem; /* Space between each audit box */
+}
+
+.audit-info {
+  background-color: #ffffff; /* White background for each audit box */
+  margin: 1rem 0; /* Space between each audit box */
+  padding: 1.5rem; /* Padding inside the audit box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  gap: 0.5rem; /* Space between each paragraph */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition for hover effect */
+}
+
+.audit-info:hover {
+  transform: translateY(-5px); /* Lift the audit box on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.audit-info .top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audit-info .top-line .closureType {
+  font-weight: bold;
+  color: #007bff; /* Blue color for closure type */
+}
+
+.audit-info .top-line .captain {
+  font-style: italic;
+  color: #6c757d; /* Muted color for captain's name */
+}
+
+.audit-info p {
+  font-size: 1rem;
+  color: #555555; /* Lighter gray text */
+}
+
+.audit-info .project {
+  font-weight: 600;
+  color: #28a745; /* Green color for project name */
+}
+
+/* Pagination Styling */
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+#pagination button {
+  padding: 0.5rem 1rem;
+  background-color: #2980B9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination button:hover {
+  filter: brightness(0.85);
+  transform: scale(1.1);
+}
+
+#pagination button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+#pagination span {
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #pagination {
+    flex-direction: column; /* Stack pagination buttons vertically on small screens */
+  }
+
+  .audit-info {
+    padding: 1rem; /* Smaller padding for audit boxes */
+  }
+}
+
+
+
+#xpByProjectGraph,
+#auditRatio,
+#audits,
+#projectPassnFailRatio {
+  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  padding: 3.5rem 3rem; /* More padding for larger form space */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+  margin: 1rem 0;
+}
+
+/* Container for the grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal size */
+  gap: 2rem; /* Space between the grid items */
+  margin-top: 150px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* To make the sections responsive, you can adjust the layout on smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack the items on top of each other on smaller screens */
+  }
+  
+  #xpByProjectGraph,
+  #auditRatio,
+  #audits,
+  #projectPassnFailRatio {
+    padding: 2rem 1.5rem; /* Less padding on smaller screens */
+  }
+}
