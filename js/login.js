@@ -33,7 +33,7 @@ if (request.ok){
     const requestData = await request.json();
     // console.log(requestData.token)
     localStorage.setItem('JWT', requestData);
-    window.location.href = './profile.html';
+    window.location.href = '/html/profile.html';
 }else {
     document.getElementById('error-message').style.display = 'block';
 }
