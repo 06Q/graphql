@@ -6,8 +6,8 @@
 }
 
 body {
-  background: #222831; /* Dark background for the body */
-  color: #E3E3E3; /* Light gray text for contrast */
+  background: linear-gradient(135deg, #d0e7ff, #f0f8ff); /* Dark background for the body */
+  color: #333; /* Light gray text for contrast */
   min-height: 100vh;
 }
 
@@ -26,7 +26,7 @@ body {
 
 #logout {
   color: #fff;
-  background-color: #4E5D6C; /* Teal color for the logout button */
+  background: linear-gradient(135deg,#a0c4ff,#79baff); 
   border: none;
   padding: 10px 18px;
   font-size: 0.9rem;
@@ -35,8 +35,9 @@ body {
 }
 
 #logout:hover {
+  transform: translateY(-2px);
   filter: brightness(0.85);
-  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2)
 }
 
 .container {
@@ -54,12 +55,15 @@ body {
 /* ===== User Info ===== */
 .user-info {
   grid-column: 1 / -1;
-  background: #393E46; /* Dark gray background for the user info */
+  background: rgba(255,255,255,0.25); /* Dark gray background for the user info */
   border-radius: 10px;
   padding: 20px 25px;
   height: 130px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   display: flex;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
   align-items: center;
   justify-content: space-between;
 }
@@ -85,7 +89,7 @@ body {
 
 .user-infoDe p {
   font-size: 0.9rem;
-  color: #E3E3E3; /* Light gray for the user info text */
+  
 }
 
 .user-infoDe span {
@@ -100,16 +104,17 @@ body {
 
 /* ===== Card style ===== */
 .card {
-  background: #393E46; /* Dark gray for the card background */
+  background: rgba(255,255,255,0.25); /* Dark gray for the card background */
   border-radius: 10px;
   padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* ===== Audit List ===== */
 #audits h1 {
   margin-bottom: 10px;
-  color: #E3E3E3; /* Light gray for headings */
 }
 
 #audit-list {
@@ -121,7 +126,9 @@ body {
 }
 
 .audit-info {
-  background: #45494f; /* Teal color for audit items */
+  background: rgba(160,196,255,0.25);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 6px;
   padding: 10px 12px;
   display: flex;
@@ -132,16 +139,17 @@ body {
 .audit-info .left {
   display: flex;
   flex-direction: column;
+  
 }
 
 .audit-info .closureType {
-  font-weight: 700;
-  color: #E3E3E3; /* Dark background color for closure type text */
+  font-weight: 600;
+  color: #333; /* Dark background color for closure type text */
 }
 
 .audit-info .project {
-  font-weight: 700;
-  color: #E3E3E3; /* Dark text color for project names */
+  font-style: italic;
+  color: #444; /* Dark text color for project names */
 }
 
 .audit-info .captain {
@@ -159,7 +167,7 @@ body {
 
 #pagination button {
   padding: 8px 14px;
-  background: #4E5D6C; /* Teal color for pagination buttons */
+  background: linear-gradient(135deg,#a0c4ff,#79baff);; /* Teal color for pagination buttons */
   border: none;
   border-radius: 5px;
   color: #fff;

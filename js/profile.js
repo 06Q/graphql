@@ -1,5 +1,5 @@
 function logout(){
-    localStorage.clear();
+    localStorage.removeItem('JWT');
     window.location.href = '/index.html';
 }
 const JWT = localStorage.getItem('JWT');
@@ -335,7 +335,7 @@ console.log(userID)
 
 
 
-function createPassFailDonutChart() {
+async function createPassFailDonutChart() {
   const total = totalPass + totalFail;
   const failPercent = (totalFail / total) * 100;
   const ratio = totalFail === 0 ? "∞" : (totalPass / totalFail).toFixed(2);
@@ -394,14 +394,14 @@ function createPassFailDonutChart() {
   text.style.fontFamily = "Arial, sans-serif";
   text.style.fontWeight = "bold";
   text.style.fontSize = "6px";
-  text.style.fill = "#ffffffff";
+  text.style.fill = "#333";
   text.textContent = ratio;
   svg.appendChild(text);
 
   container.appendChild(svg);
 }
 
-function createXpByProject() {
+async function createXpByProject() {
   const SVG_NS = "http://www.w3.org/2000/svg";
   const container = document.getElementById("barChart");
   container.innerHTML = "";
@@ -410,12 +410,17 @@ function createXpByProject() {
   const gap = 20;
   const padding = 90;
   const height = 500;
-  const numBars = projectNameXp.length;
-  const width = padding * 2 + numBars * (barWidth + gap);
-  
   const filteredProjects = projectNameXp.filter(
-  p => p.amount >= 0 && !p.name.toLowerCase().includes("piscine")
+  p =>
+    typeof p.amount === "number" &&
+    !isNaN(p.amount) &&
+    p.amount > 0 &&
+    !p.name.toLowerCase().includes("piscine")
 );
+
+
+const numBars = filteredProjects.length;
+const width = padding * 2 + numBars * (barWidth + gap);
 
   const svg = document.createElementNS(SVG_NS, "svg");
   svg.setAttribute("width", width);
@@ -423,15 +428,14 @@ function createXpByProject() {
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   container.appendChild(svg);
 
-  const maxAmount = Math.max(...filteredProjects.map(d => d.amount)) || 1;
-
+const maxAmount = Math.max(1, ...filteredProjects.map(d => d.amount));
   /* Y AXIS */
   const yAxis = document.createElementNS(SVG_NS, "line");
   yAxis.setAttribute("x1", padding);
   yAxis.setAttribute("y1", padding);
   yAxis.setAttribute("x2", padding);
   yAxis.setAttribute("y2", height - padding);
-  yAxis.setAttribute("stroke", "#fff");
+  yAxis.setAttribute("stroke", "#333");
   yAxis.setAttribute("stroke-width", "2");
   svg.appendChild(yAxis);
 
@@ -441,7 +445,7 @@ function createXpByProject() {
   xAxis.setAttribute("y1", height - padding);
   xAxis.setAttribute("x2", width - padding);
   xAxis.setAttribute("y2", height - padding);
-  xAxis.setAttribute("stroke", "#fff");
+  xAxis.setAttribute("stroke", "#333");
   xAxis.setAttribute("stroke-width", "2");
   svg.appendChild(xAxis);
 
@@ -456,7 +460,7 @@ function createXpByProject() {
     tick.setAttribute("y1", y);
     tick.setAttribute("x2", padding);
     tick.setAttribute("y2", y);
-    tick.setAttribute("stroke", "#fff");
+    tick.setAttribute("stroke", "#333");
     svg.appendChild(tick);
 
     const label = document.createElementNS(SVG_NS, "text");
@@ -464,7 +468,7 @@ function createXpByProject() {
     label.setAttribute("y", y + 4);
     label.setAttribute("text-anchor", "end");
     label.setAttribute("font-size", "12px");
-    label.setAttribute("fill", "#fff");
+    label.setAttribute("fill", "#333");
     label.textContent = value;
     svg.appendChild(label);
   }
@@ -490,7 +494,7 @@ function createXpByProject() {
     amountText.setAttribute("y", y - 6);
     amountText.setAttribute("text-anchor", "middle");
     amountText.setAttribute("font-size", "10px");
-    amountText.setAttribute("fill", "#fff");
+    amountText.setAttribute("fill", "#333");
     amountText.textContent = item.amount;
     svg.appendChild(amountText);
 
@@ -501,12 +505,13 @@ const labelY = height - padding + 50;
 const nameText = document.createElementNS(SVG_NS, "text");
 nameText.setAttribute("x", labelX);
 nameText.setAttribute("y", labelY);
-nameText.setAttribute("text-anchor", "end");
+nameText.setAttribute("text-anchor", "middle");
 nameText.setAttribute("font-size", "11px");
-nameText.setAttribute("fill", "#fff");
+nameText.setAttribute("fill", "#333");
+amountText.setAttribute("z-index", "999");
 nameText.setAttribute(
   "transform",
-  `rotate(-45 ${labelX} ${labelY})`
+  `rotate(-55 ${labelX} ${labelY})`
 );
 wrapSvgText(nameText, item.name, 10); // adjust char limit as needed
     svg.appendChild(nameText)

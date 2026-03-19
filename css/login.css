@@ -8,12 +8,12 @@
 }
 
 body {
-  background-color: #2C3E50; /* Main background */
+  background: linear-gradient(135deg, #d0e7ff, #f0f8ff);; /* Main background */
   display: flex;
   align-items: center;
   justify-content: center;
   /* height: 100%; */
-  color: #ECF0F1;
+  color: #333;
 }
 
 /* Container for everything */
@@ -23,17 +23,19 @@ body {
 
 /* Header text */
 #header {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .login-container {
-  background-color: rgba(68, 92, 117, 1); /* Lighter background for form */
+  background: rgba(255,255,255,0.25); /* Dark gray for the card background */
   padding: 3.5rem 3rem; /* More padding for larger form space */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow to lift the form */
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
   width: 100%;
-  max-width: 400px; /* Maximum width for large screens */
+  max-width: 700px; /* Maximum width for large screens */
 }
 
 /* Input fields */
@@ -44,14 +46,14 @@ body {
   margin-bottom: 1.5rem;
   border: 1px solid #95A5A6;
   border-radius: 6px;
-  color: #ECF0F1;
-  background-color: #34495E;
+  color: #333;
+  background-color: #c1e0fe;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect on input fields */
 #login-form input:hover {
-  border-color: #2980B9;
+  border-color: #5eacff;
 }
 
 /* Button */
@@ -59,18 +61,20 @@ body {
   font-size: 1.5rem;
   padding: 20px;
   width: 100%;
-  background-color: #2980B9;
+  background: linear-gradient(135deg,#a0c4ff,#79baff); 
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 #login-button:hover {
+  transform: translateY(-2px);
   filter: brightness(0.85);
-  transform: scale(1.05); 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2)
 }
+
+
 
 #error-message{
   color: #e74c3c;
@@ -88,7 +92,9 @@ body {
 
   /* Increase form size and make more visible */
   .login-container {
-    padding: 3.5rem 2.5rem;
+    padding: 3.5rem 3rem;
+    width: 100%;
+    max-width: 700px; /* Form width for desktops */
     background-color: rgba(68, 92, 117, 1); /* Lighter background */
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -142,38 +148,7 @@ body {
   }
 }
 
-/* Desktop and larger screens */
-@media (min-width: 769px) {
-  /* Make header bigger */
-  #header {
-    font-size: 3rem; /* Larger header */
-  }
 
-  /* Increase form size */
-  .login-container {
-    padding: 3.5rem 3rem;
-    width: 100%;
-    max-width: 700px; /* Form width for desktops */
-    background-color: rgba(68, 92, 117, 1); /* Lighter background */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Longer input fields on desktop */
-  #login-form input {
-    font-size: 1.4rem;
-    padding: 20px;
-    width: 100%;  /* Longer input fields on desktop */
-    margin-bottom: 1.5rem;
-  }
-
-  /* Larger button on desktop */
-  #login-button {
-    font-size: 1.5rem;
-    padding: 20px;
-    width: 60%; /* Button full width */
-  }
-}
 
 #error-message {
     color: white;
