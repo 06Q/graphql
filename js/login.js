@@ -9,6 +9,12 @@ function EmailTest(input) {
   }
 }
 
+const JWT = localStorage.getItem('JWT');
+
+if (JWT){
+  window.location.href= '/html/profile.html'
+}
+
 
 document.getElementById("login-form").addEventListener('submit', async function(event) {
 event.preventDefault();
