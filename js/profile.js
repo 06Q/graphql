@@ -1,7 +1,7 @@
 function logout(){
     localStorage.removeItem('JWT');
     history.replaceState(null, "", "/index.html");  
-    window.location.replace= '/index.html'
+    window.location.href= '/index.html'
 
 }
 const JWT = localStorage.getItem('JWT');
