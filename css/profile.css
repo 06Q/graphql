@@ -234,6 +234,9 @@ body {
     grid-template-columns: 1fr;
     max-height: 300px;
   }
+  #audits {
+      overflow-y: scroll;
+  }
 }
 
 /* ===== Small Phones ===== */
@@ -269,6 +272,9 @@ body {
   #pagination button {
     padding: 6px 12px;
     font-size: 0.85rem;
+  }
+  #audits {
+      overflow-y: scroll;
   }
 }
 

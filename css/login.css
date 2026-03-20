@@ -33,7 +33,7 @@ body {
   border-radius: 12px; /* Rounded corners */
   border: 1px solid rgba(255,255,255,0.3);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   width: 100%;
   max-width: 700px; /* Maximum width for large screens */
 }
@@ -95,9 +95,11 @@ body {
     padding: 3.5rem 3rem;
     width: 100%;
     max-width: 700px; /* Form width for desktops */
-    background-color: rgba(68, 92, 117, 1); /* Lighter background */
+    background-color: rgba(255,255,255,0.25); /* Lighter background */
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
   }
 
   /* Make input fields shorter */
@@ -127,7 +129,7 @@ body {
   /* Increase form size and make more visible */
   .login-container {
     padding: 3.5rem 2.5rem;
-    background-color: rgba(68, 92, 117, 1); /* Lighter background */
+    background: rgba(255,255,255,0.25);
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   }
@@ -138,6 +140,8 @@ body {
     padding: 18px;
     width: 100%;  /* Shorter input fields on tablets */
     margin: 0 auto 1.5rem auto; /* Center the fields */
+    background-color: #c1e0fe;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   /* Larger button on tablets */
