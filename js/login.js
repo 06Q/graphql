@@ -12,7 +12,7 @@ function EmailTest(input) {
 const JWT = localStorage.getItem('JWT');
 
 if (JWT){
-history.replaceState(null, "", "/html/profile.html");
+  window.location.replace= '/html/profile.html'
 }
 
 
