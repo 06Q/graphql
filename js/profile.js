@@ -275,22 +275,22 @@ console.log(totalXp)
 console.log(projectNameXp)
 
 
-const pass = [];
-const fail = [];
+totalPass = 3;
+totalFail = 1;
 
 for (const tx of passFail) {
   if (tx.grade >= 1) {
-    pass.push(tx.grade);
+    totalPass++;
   } else {
-    fail.push(tx.grade);
+    totalFail++;
   }
 }
 
-totalPass = pass.reduce((a, b) => a + b, 0);
-totalFail = fail.reduce((a, b) => a + b, 0);
+// totalPass = pass.reduce((a, b) => a + b, 0);
+// totalFail = fail.reduce((a, b) => a + b, 0);
 // totalPass = totalPass / 1_000_000;
 // totalFail = totalFail / 1_000_000;
-console.log(totalPass + totalFail)
+// console.log(totalPass + totalFail)
 // if (totalPass < 1 ){
 //     totalPass = totalPass.toFixed(3);
 // }else{
@@ -340,10 +340,11 @@ console.log(userID)
 async function createPassFailDonutChart() {
   const total = totalPass + totalFail;
   const failPercent = (totalFail / total) * 100;
-  const ratio = totalFail === 0 ? "∞" : (totalPass / totalFail).toFixed(2);
+const ratio = totalFail === 0 ? Infinity : totalPass / totalFail;
 
   console.log(total)
   console.log(ratio)
+  console.log(failPercent)
 
   
 
