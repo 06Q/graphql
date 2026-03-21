@@ -275,8 +275,8 @@ console.log(totalXp)
 console.log(projectNameXp)
 
 
-totalPass = 3;
-totalFail = 1;
+totalPass = 0;
+totalFail = 0;
 
 for (const tx of passFail) {
   if (tx.grade >= 1) {
