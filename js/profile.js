@@ -111,9 +111,6 @@ async function fetchUserData() {
                         name
                         }
                     }
-
-                    
-
                     
                     projectPiscineReward: transaction (
                     where: {
@@ -278,8 +275,8 @@ console.log(projectNameXp)
 totalPass = 0;
 totalFail = 0;
 
-for (const tx of passFail) {
-  if (tx.grade >= 1) {
+for (const tx of projectNameXp) {
+  if (tx.amount > 0) {
     totalPass++;
   } else {
     totalFail++;
@@ -340,7 +337,7 @@ console.log(userID)
 async function createPassFailDonutChart() {
   const total = totalPass + totalFail;
   const failPercent = (totalFail / total) * 100;
-const ratio = totalFail === 0 ? Infinity : totalPass / totalFail;
+  const ratio = totalFail === 0 ? Infinity : totalPass / totalFail;
 
   console.log(total)
   console.log(ratio)
