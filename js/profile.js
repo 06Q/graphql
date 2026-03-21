@@ -148,19 +148,6 @@ async function fetchUserData() {
                     }
                     }
 
-                    projectPassFail : result (
-                    where: {
-                    isLast: {_eq: true},
-                    object: {type: {_eq: "project"}}
-                    }
-                    ) {
-                    objectId
-                    grade
-                    object{
-                    name
-                    }
-                    }
-
                     myAudits : audit (
                     distinct_on: groupId
                     where: {
@@ -193,10 +180,8 @@ async function fetchUserData() {
     const gradeAudit = requestData.data.userAuditRatio;
     const projectPiscineReward = requestData.data.projectPiscineReward;
     const examReward = requestData.data.examReward;
-    const passFail = requestData.data.projectPassFail;
     myAudits = requestData.data.myAudits;
 
-    // console.log(gradeAudit)
     
     // basic user information
     firstName = user.firstName;
@@ -205,8 +190,6 @@ async function fetchUserData() {
     gender = user.genders;
 
     
-    // /css/profile.css
-
     
 // calculainng audit ratio
 
@@ -283,23 +266,6 @@ for (const tx of projectNameXp) {
   }
 }
 
-// totalPass = pass.reduce((a, b) => a + b, 0);
-// totalFail = fail.reduce((a, b) => a + b, 0);
-// totalPass = totalPass / 1_000_000;
-// totalFail = totalFail / 1_000_000;
-// console.log(totalPass + totalFail)
-// if (totalPass < 1 ){
-//     totalPass = totalPass.toFixed(3);
-// }else{
-//     totalPass = totalPass.toFixed(2)
-// }
-
-// if (totalFail < 1 ){
-//     totalFail = totalFail.toFixed(3);
-// }else{
-//     totalFail = totalFail.toFixed(2)
-// }
-
 const passFailRatio = totalPass/totalFail;
 
 passAndFailRatio = passFailRatio.toFixed(1);
@@ -317,8 +283,6 @@ console.log(userID)
     document.getElementById('user-name').textContent = firstName + ' ' + lastName
     document.getElementById('user-gender').textContent = gender
     document.getElementById('user-email').textContent = email
-    // document.getElementById('ratioUp').textContent = totalUp + " MB"
-    // document.getElementById('ratioDown').textContent = totalDown + " MB"
     document.getElementById('totalRatio').textContent = roundedRatio 
     document.getElementById('totalXp').textContent = totalXp + " Kb"
 }
@@ -613,7 +577,5 @@ function changePage(direction) {
     // Render the audits for the new page
     renderAudits();
 }
-
-// Initial rendering
-// renderAudits();
+;
 
