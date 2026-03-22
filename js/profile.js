@@ -148,6 +148,18 @@ async function fetchUserData() {
                     }
                     }
 
+                    projectPassFail: progress (
+where: {
+grade: {_is_null: false}
+object: {type: {_eq: "project"}}								
+}
+) {
+grade
+object{
+name
+}
+}
+
                     myAudits : audit (
                     distinct_on: groupId
                     where: {
@@ -180,6 +192,7 @@ async function fetchUserData() {
     const gradeAudit = requestData.data.userAuditRatio;
     const projectPiscineReward = requestData.data.projectPiscineReward;
     const examReward = requestData.data.examReward;
+    const projectPassFail = requestData.data.projectPassFail;
     myAudits = requestData.data.myAudits;
 
     
@@ -258,8 +271,10 @@ console.log(projectNameXp)
 totalPass = 0;
 totalFail = 0;
 
-for (const tx of projectNameXp) {
-  if (tx.amount > 0) {
+for (const tx of projectPassFail) {
+
+
+  if (tx.grade > 0) {
     totalPass++;
   } else {
     totalFail++;
@@ -272,6 +287,7 @@ passAndFailRatio = passFailRatio.toFixed(1);
 
 console.log(totalPass)
 console.log(totalFail)
+console.log(projectPassFail)
 console.log(passAndFailRatio)
 console.log(userID)
 
