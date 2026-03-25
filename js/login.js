@@ -39,7 +39,8 @@ const request = await fetch('https://learn.reboot01.com/api/auth/signin', {
 if (request.ok){
     const requestData = await request.json();
     localStorage.setItem('JWT', requestData);
-    window.location.href = '/html/profile.html';
+    history.replaceState(null, "", "/html/profile.html");  
+    window.location.href= '/html/profile.html'
 }else {
     document.getElementById('error-message').style.display = 'block';
 }
