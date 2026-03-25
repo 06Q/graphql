@@ -63,6 +63,11 @@
         <div id="barChart"></div>
     </div>
     </div>
+    <script>
+    if (!localStorage.getItem("JWT")) {
+      window.location.replace("index.html");
+    }
+  </script>
     <script src="/js/profile.js" defer></script>
 </body>
 </html>

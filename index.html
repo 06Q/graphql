@@ -23,6 +23,11 @@
          </div>
 
     </div>
+     <script>
+    if (localStorage.getItem("JWT")) {
+      window.location.replace("/html/profile.html");
+    }
+  </script>
     <script  src="/js/login.js" defer></script>
 </body>
 </html>
