@@ -48,13 +48,16 @@ async function fetchBasicInfo() {
 
         const requestData = await request.json();
 
+        if (!requestData.data){
+            logout();
+        } 
+
         userID = requestData.data.user[0]?.id; 
         username = requestData.data.user[0]?.login;    
         userJoined = requestData.data.user[0]?.updatedAt;
     
 
         if (username && userID) {
-
             document.getElementById('username').textContent = username;  
 
 
